@@ -1,0 +1,2 @@
+class GpsTrackingController < ApplicationController
+end

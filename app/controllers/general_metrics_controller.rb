@@ -1,0 +1,2 @@
+class GeneralMetricsController < ApplicationController
+end

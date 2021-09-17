@@ -1,0 +1,2 @@
+class BravosController < ApplicationController
+end

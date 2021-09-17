@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  heartRate: 1
+  cadence: 1
+  time: 2021-09-16 21:08:00
+
+two:
+  heartRate: 1
+  cadence: 1
+  time: 2021-09-16 21:08:00

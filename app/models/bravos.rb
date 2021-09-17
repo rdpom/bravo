@@ -1,0 +1,2 @@
+class Bravos < ApplicationRecord
+end

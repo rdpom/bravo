@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_16_045252) do
+ActiveRecord::Schema.define(version: 2021_09_17_044541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bravos", force: :cascade do |t|
+    t.integer "activityID"
+    t.integer "userID"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "activityID"
+    t.integer "userID"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "followers", force: :cascade do |t|
+    t.integer "follower"
+    t.integer "followee"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "general_metrics", force: :cascade do |t|
+    t.integer "distance"
+    t.datetime "movingTime"
+    t.integer "elevationGain"
+    t.integer "calories"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "general_sensor_trackings", force: :cascade do |t|
+    t.integer "heartRate"
+    t.integer "cadence"
+    t.datetime "time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "gps_trackings", force: :cascade do |t|
+    t.integer "latitude"
+    t.integer "longitude"
+    t.integer "elevation"
+    t.datetime "time"
+    t.integer "ID"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

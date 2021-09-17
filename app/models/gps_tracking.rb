@@ -1,0 +1,2 @@
+class GpsTracking < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class GeneralMetric < ApplicationRecord
+end

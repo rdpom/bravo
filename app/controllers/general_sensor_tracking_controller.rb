@@ -1,0 +1,2 @@
+class GeneralSensorTrackingController < ApplicationController
+end

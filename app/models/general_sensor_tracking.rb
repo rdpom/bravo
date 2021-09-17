@@ -1,0 +1,2 @@
+class GeneralSensorTracking < ApplicationRecord
+end
