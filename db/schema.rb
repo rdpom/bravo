@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2021_09_21_030722) do
   enable_extension "plpgsql"
 
   create_table "followers", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "followed_user_id", null: false
+    t.bigint "followee_id", null: false
+    t.bigint "follower_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["followed_user_id"], name: "index_followers_on_followed_user_id"
-    t.index ["user_id"], name: "index_followers_on_user_id"
+    t.index ["followee_id"], name: "index_followers_on_followee_id"
+    t.index ["follower_id"], name: "index_followers_on_follower_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,6 +35,6 @@ ActiveRecord::Schema.define(version: 2021_09_21_030722) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "followers", "users"
-  add_foreign_key "followers", "users", column: "followed_user_id"
+  add_foreign_key "followers", "users", column: "followee_id"
+  add_foreign_key "followers", "users", column: "follower_id"
 end

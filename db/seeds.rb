@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 user1 = User.create(name: 'Luke', birthday: Time.current, email: 'fake@fake.com', password: 'test')
 user2 = User.create(name: 'John', birthday: Time.current, email: 'real@real.com', password: 'test2')
-Follower.create(followee: user1.id, follower: user2.id)
+Follower.create(followee_id: user1.id, follower_id: user2.id)
