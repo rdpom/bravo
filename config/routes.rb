@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'user/display'
   get 'user/add'
+  get 'signup'  => 'user#new'
+
   get 'hello_world/index'
   # root 'hello_world#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # Test fix
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 gem 'bootstrap-sass',       '3.4.0'
+gem 'rails-controller-testing'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -5,4 +5,7 @@ class UserController < ApplicationController
 
   def add
   end
+
+  def new
+  end
 end
