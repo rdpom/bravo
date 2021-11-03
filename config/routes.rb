@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get 'contact'   =>  'static_pages#contact'
 
   get 'static_pages/home'
-  get 'user/display'
-  get 'user/add'
-  get 'signup'  => 'user#new'
+  get 'users/display'
+  get 'users/add'
+  get 'signup'  => 'users#new'
+  resources :users
 
   get 'hello_world/index'
   # root 'hello_world#index'
