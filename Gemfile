@@ -27,6 +27,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 gem 'bootstrap-sass',       '3.4.0'
 gem 'rails-controller-testing'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'will_paginate',           '3.3'
+gem 'bootstrap-will_paginate'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
