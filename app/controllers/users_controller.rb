@@ -47,6 +47,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.where(activated: FILL_IN).paginate(page: params[:page])
+  end
+
+  def show
+    @user = User.find(params[:id])
+    byebug
+    redirect_to root_url and return unless FILL_IN
+  end
+
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
