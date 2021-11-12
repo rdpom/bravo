@@ -75,6 +75,12 @@ class User < ApplicationRecord
 	 reset_sent_at < 2.hours.ago
 	end
 
+	# Defines a proto-feed.
+	# See "Following users" for the full implementation.
+	def feed
+	  Micropost.where("user_id = ?", id)
+	end
+
 	# has_many :followers, class_name: 'Follower', foreign_key: 'followee'
 	# has_many :followees, class_name: 'Follower', foreign_key: 'follower'
 

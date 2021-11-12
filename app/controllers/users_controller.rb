@@ -52,10 +52,10 @@ class UsersController < ApplicationController
     @users = User.where(activated: true).paginate(page: params[:page])
   end
 
-  def show
-    @user = User.find(params[:id])
-    redirect_to root_url and return unless User.where(activated: true)
-  end
+  # def show
+  #   @user = User.find(params[:id])
+  #   redirect_to root_url and return unless User.where(activated: true)
+  # end
 
   def destroy
     User.find(params[:id]).destroy
