@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_05_001307) do
+ActiveRecord::Schema.define(version: 2021_11_12_025558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2021_11_05_001307) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["followee_id"], name: "index_followers_on_followee_id"
     t.index ["follower_id"], name: "index_followers_on_follower_id"
+  end
+
+  create_table "microposts", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +49,5 @@ ActiveRecord::Schema.define(version: 2021_11_05_001307) do
 
   add_foreign_key "followers", "users", column: "followee_id"
   add_foreign_key "followers", "users", column: "follower_id"
+  add_foreign_key "microposts", "users"
 end
