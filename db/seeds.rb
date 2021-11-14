@@ -12,7 +12,7 @@
 # Follower.create(followee_id: user1.id, follower_id: user2.id)
 
 User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
+             email: "example@example.org",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
@@ -21,7 +21,7 @@ User.create!(name:  "Example User",
 
 99.times do |n|
   name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  email = "example-#{n+1}@example.org"
   password = "password"
   User.create!(name:  name,
                email: email,
@@ -34,5 +34,6 @@ end
 users = User.order(:created_at).take(6)
 50.times do
   content = Faker::Lorem.sentence(word_count: 5)
+  # binding.pry
   users.each { |user| user.microposts.create!(content: content) }
 end
