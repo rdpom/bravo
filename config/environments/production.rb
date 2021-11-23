@@ -68,9 +68,9 @@ Rails.application.configure do
 
 
   config.action_mailer.delivery_method = :postmark
-  host = 'https://bravo-rdpom-fitness.herokuapp.com/'
+  host = 'bravo-rdpom-fitness.herokuapp.com'
   config.action_mailer.default_url_options = { host: host}
-  config.action_mailer.default_url_options = { :host => "" }
+  # config.action_mailer.default_url_options = { :host => "" }
   config.action_mailer.postmark_settings = {
     api_token: Rails.application.credentials.postmark_api_token
   }
