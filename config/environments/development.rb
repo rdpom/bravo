@@ -36,6 +36,11 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
+  # config.action_mailer.delivery_method = :postmark
+
+  # config.action_mailer.postmark_settings = {
+  #   api_token: Rails.application.credentials.postmark_api_token
+  # }
   # host = 'https://bravo-rdpom-fitness.herokuapp.com/'       # Heroku server
   host = 'localhost:3000'       # Local server
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
