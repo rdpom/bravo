@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -42,7 +42,7 @@ Rails.application.configure do
   #   api_token: Rails.application.credentials.postmark_api_token
   # }
   # host = 'https://bravo-rdpom-fitness.herokuapp.com/'       # Heroku server
-  host = 'localhost:3000'       # Local server
+  host = 'localhost:3000' # Local server
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 
   config.action_mailer.perform_caching = false

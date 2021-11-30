@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -53,7 +53,7 @@ Rails.application.configure do
   config.log_level = :info
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -66,10 +66,9 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
 
-
   config.action_mailer.delivery_method = :postmark
   host = 'bravo-rdpom-fitness.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host}
+  config.action_mailer.default_url_options = { host: host }
   # config.action_mailer.default_url_options = { :host => "" }
   config.action_mailer.postmark_settings = {
     api_token: Rails.application.credentials.postmark_api_token
@@ -99,7 +98,7 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)

@@ -1,6 +1,8 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'rails/all'
+
+require File.expand_path('../boot', __FILE__)
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,6 +18,9 @@ module Myapp
     config.action_mailer.postmark_settings = {
       api_token: Rails.application.credentials.postmark_api_token
     }
+
+    # Include the authenticity token in remote forms.
+    config.action_view.embed_authenticity_token_in_remote_forms = true
 
     # Configuration for the application, engines, and railties goes here.
     #

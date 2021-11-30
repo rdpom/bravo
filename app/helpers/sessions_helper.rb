@@ -1,8 +1,7 @@
 module SessionsHelper
-
   # Logs in the given user.
   def log_in(user)
-  	# binding.pry
+    # binding.pry
     session[:user_id] = user.id
   end
 
@@ -17,7 +16,6 @@ module SessionsHelper
   def current_user?(user)
     user == current_user
   end
-
 
   # Returns the user corresponding to the remember token cookie.
   def current_user
@@ -46,7 +44,7 @@ module SessionsHelper
 
   # Logs out the current user.
   def log_out
-  	forget(current_user)
+    forget(current_user)
     session.delete(:user_id)
     @current_user = nil
   end
@@ -61,5 +59,4 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
-
 end

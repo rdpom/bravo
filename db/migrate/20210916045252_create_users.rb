@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.timestamp :birthday
       t.string :email, index: { unique: true }
       t.string :password
-      t.json :extra, :default => {}
+      t.json :extra, default: {}
 
       t.timestamps
     end
